@@ -6,13 +6,15 @@ import classes from "./Warn.module.css";
 
 const Warn = (props) => (
   <Aux>
-    <p>{props.info}</p>
-    <Button clicked={props.yes} btnType="Add">
-      Yes
-    </Button>
-    <Button clicked={props.no} btnType="Delete">
-      No
-    </Button>
+    <p className={classes.Description}>{props.info}</p>
+    <div className={classes.Wrapper}>
+      <Button clicked={props.yes} btnType="Add">
+        Yes
+      </Button>
+      <Button clicked={props.no} btnType="Delete">
+        No
+      </Button>
+    </div>
   </Aux>
 );
 

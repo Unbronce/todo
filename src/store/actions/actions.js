@@ -1,15 +1,30 @@
 import * as actionTypes from "./actionTypes";
+import { addToLocalStorage, removeFromLocalStorage } from "../utilis";
 
-export const addTask = (newTask) => {
+export const setTask = (newTask) => {
   return {
     type: actionTypes.ADD_TASK,
     task: newTask,
   };
 };
 
-export const deleteTask = (taskId) => {
+export const removeTask = (taskId) => {
   return {
     type: actionTypes.DELETE_TASK,
     id: taskId,
+  };
+};
+
+export const addTask = (newTask) => {
+  return (dispatch) => {
+    dispatch(setTask(newTask));
+    addToLocalStorage(newTask);
+  };
+};
+
+export const deleteTask = (taskId) => {
+  return (dispatch) => {
+    dispatch(removeTask(taskId));
+    removeFromLocalStorage(taskId);
   };
 };

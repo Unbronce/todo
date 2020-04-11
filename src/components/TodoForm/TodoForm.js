@@ -13,6 +13,7 @@ const TodoForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     props.addTask({ title: value, id: uuidv4() });
+    setValue("");
   };
 
   return (

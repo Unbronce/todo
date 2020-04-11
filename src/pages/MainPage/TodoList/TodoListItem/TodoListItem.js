@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 
-import Button from "../../UI/Button/Button";
-import Modal from "../../UI/Modal/Modal";
-import Warn from "../../UI/Warn/Warn";
+import Button from "../../../../components/UI/Button/Button";
+import Modal from "../../../../components/UI/Modal/Modal";
+import Warn from "../../../../components/UI/Warn/Warn";
 
 const TodoListItem = (props) => {
   const [showModal, setShowModal] = useState(false);

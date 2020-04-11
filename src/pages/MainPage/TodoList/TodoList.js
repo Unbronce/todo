@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../UI/Card/Card";
+import Card from "../../../components/UI/Card/Card";
 import TodoListItem from "./TodoListItem/TodoListItem";
 import classes from "./TodoList.module.css";
 

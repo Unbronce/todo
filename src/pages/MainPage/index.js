@@ -3,10 +3,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/actions";
 
-import TodoForm from "../../components/TodoForm/TodoForm";
-import TodoList from "../../components/TodoList/TodoList";
+import TodoForm from "./TodoForm/TodoForm";
+import TodoList from "./TodoList/TodoList";
 
-import classes from "./MainPage.module.css";
+import classes from "./styles.module.css";
 
 const MainPage = (props) => {
   const dispatch = useDispatch();

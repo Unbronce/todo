@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
-import Button from "../UI/Button/Button";
-import Card from "../UI/Card/Card";
+import Button from "../../../components/UI/Button/Button";
+import Card from "../../../components/UI/Card/Card";
 
 import classes from "./TodoForm.module.css";
 

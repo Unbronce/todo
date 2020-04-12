@@ -12,21 +12,6 @@ const TodoForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // const item = localStorage.getItem("item");
-    // if (item) {
-    //   const arr = JSON.parse(localStorage.getItem("item")).concat({
-    //     title: value,
-    //     id: uuidv4(),
-    //   });
-    //   localStorage.setItem("item", JSON.stringify(arr));
-    // } else {
-    //   localStorage.setItem(
-    //     "item",
-    //     JSON.stringify([{ title: value, id: uuidv4() }])
-    //   );
-    // }
-    // const lsToArr = JSON.parse(localStorage.getItem("item"));
-    // props.addTask(lsToArr);
     props.addTask({ title: value, id: uuidv4() });
     setValue("");
   };

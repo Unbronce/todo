@@ -1,11 +1,16 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  tasks: JSON.parse(localStorage.getItem("item")),
+  tasks: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.SET_STATE:
+      return {
+        ...state,
+        tasks: action.newState,
+      };
     case actionTypes.ADD_TASK:
       return {
         ...state,

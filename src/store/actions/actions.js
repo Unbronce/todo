@@ -15,6 +15,13 @@ export const removeTask = (taskId) => {
   };
 };
 
+export const initializeTasks = () => {
+  return {
+    type: actionTypes.SET_STATE,
+    newState: JSON.parse(localStorage.getItem("item")),
+  };
+};
+
 export const addTask = (newTask) => {
   return (dispatch) => {
     dispatch(setTask(newTask));

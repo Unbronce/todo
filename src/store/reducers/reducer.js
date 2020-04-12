@@ -1,7 +1,7 @@
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  tasks: [],
+  tasks: JSON.parse(localStorage.getItem("item")),
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,8 +9,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.ADD_TASK:
       return {
         ...state,
-        // tasks: [...state.tasks, action.task],
-        tasks: state.tasks.concat(action.task),
+        tasks: action.task,
       };
     case actionTypes.DELETE_TASK:
       return {

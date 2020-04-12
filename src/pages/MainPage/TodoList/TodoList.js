@@ -10,14 +10,16 @@ const TodoList = (props) => {
       <p>Start to add tasks</p>
     </li>
   );
-  if (JSON.parse(localStorage.getItem("item"))) {
-    if (JSON.parse(localStorage.getItem("item")).length !== 0) {
-      items = JSON.parse(localStorage.getItem("item")).map((task) => (
-        <TodoListItem key={task.id} delete={() => props.deleteTask(task.id)}>
-          {task.title}
-        </TodoListItem>
-      ));
-    }
+  if (props.tasks) {
+    items = (
+      <ul>
+        {props.tasks.map((task) => (
+          <TodoListItem key={task.id} delete={() => props.deleteTask(task.id)}>
+            {task.title}
+          </TodoListItem>
+        ))}
+      </ul>
+    );
   }
   return (
     <section className={classes.TodoList}>

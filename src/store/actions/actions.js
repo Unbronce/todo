@@ -1,5 +1,5 @@
 import * as actionTypes from "./actionTypes";
-import { removeFromLocalStorage } from "../utilis";
+import { addToLocalStorage, removeFromLocalStorage } from "../utilis";
 
 export const setTask = (newTask) => {
   return {
@@ -25,6 +25,7 @@ export const initializeTasks = () => {
 export const addTask = (newTask) => {
   return (dispatch) => {
     dispatch(setTask(newTask));
+    addToLocalStorage(newTask);
   };
 };
 

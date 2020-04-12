@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.ADD_TASK:
       return {
         ...state,
-        tasks: action.task,
+        tasks: state.tasks.concat(action.task),
       };
     case actionTypes.DELETE_TASK:
       return {

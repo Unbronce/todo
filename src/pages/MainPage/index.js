@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import * as actions from "store/actions/actions";
+import * as actions from "../../store/actions/actions";
 
 import TodoForm from "./TodoForm/TodoForm";
 import TodoList from "./TodoList/TodoList";

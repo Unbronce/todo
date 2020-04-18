@@ -10,7 +10,7 @@ const TodoList = React.memo((props) => {
       <p>Start to add tasks</p>
     </li>
   );
-  if (props.tasks) {
+  if (props.tasks.length >= 1) {
     items = (
       <ul>
         {props.tasks.map((task) => (

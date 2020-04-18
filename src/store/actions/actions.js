@@ -27,17 +27,28 @@ export const updatedTask = (curr, name) => {
   };
 };
 
-export const initializeTasks = () => {
+export const initializeState = () => {
   return {
     type: actionTypes.SET_STATE,
     newState: JSON.parse(localStorage.getItem("item")),
   };
 };
 
+export const initializeTasks = () => {
+  return (dispatch) => {
+    const item = localStorage.getItem("item");
+    if (item) {
+      dispatch(initializeState());
+    } else {
+      localStorage.setItem("item", JSON.stringify([]));
+    }
+  };
+};
+
 export const addTask = (newTask) => {
   return (dispatch) => {
-    dispatch(setTask(newTask));
     addToLocalStorage(newTask);
+    dispatch(setTask(newTask));
   };
 };
 

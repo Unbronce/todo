@@ -1,3 +1,12 @@
+export const getItems = () => {
+  const item = localStorage.getItem("item");
+  if (item) {
+    return JSON.parse(item);
+  } else {
+    return [];
+  }
+};
+
 export const addToLocalStorage = (task) => {
   const item = localStorage.getItem("item");
   if (item) {

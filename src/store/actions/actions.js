@@ -3,6 +3,7 @@ import {
   addToLocalStorage,
   removeFromLocalStorage,
   changeItem,
+  getItems,
 } from "../utilis";
 
 export const setTask = (newTask) => {
@@ -27,21 +28,10 @@ export const updatedTask = (curr, name) => {
   };
 };
 
-export const initializeState = () => {
+export const initializeTasks = () => {
   return {
     type: actionTypes.SET_STATE,
-    newState: JSON.parse(localStorage.getItem("item")),
-  };
-};
-
-export const initializeTasks = () => {
-  return (dispatch) => {
-    const item = localStorage.getItem("item");
-    if (item) {
-      dispatch(initializeState());
-    } else {
-      localStorage.setItem("item", JSON.stringify([]));
-    }
+    newState: getItems(),
   };
 };
 

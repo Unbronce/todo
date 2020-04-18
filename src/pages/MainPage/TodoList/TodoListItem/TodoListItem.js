@@ -1,10 +1,12 @@
 import React, { useState, useCallback } from "react";
 
-import Button from "../../../../components/UI/Button/Button";
+import TaskField from "../../TaskField/TaskField";
 import Modal from "../../../../components/UI/Modal/Modal";
 import Warn from "../../../../components/UI/Warn/Warn";
 
-const TodoListItem = (props) => {
+import classes from "./TodoListItem.module.css";
+
+const TodoListItem = React.memo((props) => {
   const [showModal, setShowModal] = useState(false);
 
   const showModalHandler = useCallback(() => {
@@ -16,11 +18,8 @@ const TodoListItem = (props) => {
   }, []);
 
   return (
-    <li>
-      {props.children}
-      <Button clicked={showModalHandler} btnType="Delete">
-        Delete Task
-      </Button>
+    <li className={classes.ListItem}>
+      <TaskField info={props.children} showModal={showModalHandler} />
       <Modal show={showModal} modalClosed={closeModalHandler}>
         <Warn
           info="Are you sure you want to delete this task?"
@@ -33,6 +32,6 @@ const TodoListItem = (props) => {
       </Modal>
     </li>
   );
-};
+});
 
 export default TodoListItem;

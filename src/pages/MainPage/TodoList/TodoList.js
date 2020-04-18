@@ -4,7 +4,7 @@ import Card from "../../../components/UI/Card/Card";
 import TodoListItem from "./TodoListItem/TodoListItem";
 import classes from "./TodoList.module.css";
 
-const TodoList = (props) => {
+const TodoList = React.memo((props) => {
   let items = (
     <li>
       <p>Start to add tasks</p>
@@ -29,6 +29,6 @@ const TodoList = (props) => {
       </Card>
     </section>
   );
-};
+});
 
 export default TodoList;

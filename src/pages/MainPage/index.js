@@ -22,6 +22,7 @@ const MainPage = (props) => {
   );
 
   useEffect(() => {
+    localStorage.setItem("item", JSON.stringify([]));
     onInitializeTasks();
   }, [onInitializeTasks]);
 

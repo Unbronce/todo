@@ -16,6 +16,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         tasks: state.tasks.concat(action.task),
       };
+    case actionTypes.CHANGE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.title === action.currentName) {
+            task.title = action.taskName;
+          }
+          return task;
+        }),
+      };
     case actionTypes.DELETE_TASK:
       return {
         ...state,

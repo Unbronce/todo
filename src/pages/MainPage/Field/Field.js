@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import classes from "./Field.module.css";
+
 const Field = (props) => {
   const [x, setX] = useState(false);
 
@@ -7,6 +9,7 @@ const Field = (props) => {
     <>
       <div style={{ display: "flex" }}>
         <input
+          className={[classes.FieldHidden, classes.FieldCheckbox].join(" ")}
           type="checkbox"
           name={props.info}
           id={props.info}
@@ -14,6 +17,7 @@ const Field = (props) => {
           onChange={() => setX(!x)}
         />
         <label
+          className={classes.FieldLabel}
           style={{
             userSelect: "none",
             textDecorationLine: x ? "line-through" : "none",

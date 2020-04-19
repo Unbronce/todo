@@ -1,8 +1,11 @@
 import React, { useState, useCallback } from "react";
+import { useDispatch } from "react-redux";
 
 import Button from "../../../components/UI/Button/Button";
-import { useDispatch } from "react-redux";
+import InputText from "../../../components/UI/InputText/InputText";
+
 import * as actions from "../../../store/actions/actions";
+
 const Editor = (props) => {
   const [taskValue, setTaskValue] = useState(props.info);
 
@@ -21,10 +24,9 @@ const Editor = (props) => {
 
   return (
     <>
-      <input
-        type="text"
+      <InputText
         value={taskValue}
-        onChange={(event) => {
+        changed={(event) => {
           setTaskValue(event.target.value);
         }}
       />
